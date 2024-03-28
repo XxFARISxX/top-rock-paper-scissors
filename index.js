@@ -15,22 +15,26 @@ function playRound(player, computer) {
       will return the result as a tie. */
     } else if (player === "rock" && computer === "scissors") {
       //^ compares player and computer input with "rock" and "scissors".
-        return ("You Win! Rock beats Scissors.");
+        return ("You Win!" + " Rock beats Scissors.");
         /*^ if player input matches with "rock" and computer input matches
             with "scissors", this will return the result. 
-            otherwise keep going. from line 24 to line 33, it contains 
+            otherwise keep going. from line 24 to line 37, it contains 
             repetition of the same code with different input comparisons 
             and results. */
     } else if (player === "paper" && computer === "rock") {
-        return ("You Win! Paper beats Rock.");
+        return ("You Win!" + " Paper beats Rock.");
     } else if (player === "scissors" && computer === "paper") {
-        return ("You Win! Scissors beat Paper");
+        return ("You Win!" + " Scissors beat Paper"
+                /*^ "You Win/Lose!" and "blank beats blank." are 
+                    separate strings, because "You Win/Lose!" will later
+                    be used to count wins and loses. 
+                    thats the idea at least.*/);
     } else if (player === "rock" && computer === "paper") {
-        return ("You Lose! Paper beats Rock.");
+        return ("You Lose!" + " Paper beats Rock.");
     } else if (player === "paper" && computer === "scissors") {
-        return ("You Lose! Scissors beats paper.");
+        return ("You Lose!" + " Scissors beats paper.");
     } else if (player === "scissors" && computer === "rock") {
-        return ("You Lose! Rock beats Scissors.");
+        return ("You Lose!" + " Rock beats Scissors.");
     } else {
         return ("WHAT THE HELL EVEN IS THAT??!!");
         /*^ if player input is something other then "rock", "paper"
@@ -39,5 +43,5 @@ function playRound(player, computer) {
 }
 
 function playGame() {
-    
+
 }
