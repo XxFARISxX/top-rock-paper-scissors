@@ -37,3 +37,7 @@ function playRound(player, computer) {
             or "scissors", this will return*/
     }
 }
+
+function playGame() {
+    
+}
