@@ -6,8 +6,14 @@ function getComputerChoice() {
 
 function playRound(player, computer) {
 //^ the two parameters will get player and computer input.
-    player = player.toLowerCase();
-    //^ this turns the player input to lowercase.
+
+    player = prompt("choice?").toLocaleLowerCase();
+    /*^ this gets player input through a promt. 
+        also turns the player input to lowercase. */
+
+    computer = getComputerChoice();
+    /*^ this gets computer input through the getComputerChoice()
+        function. */
 
     if (player === computer) {
         return ("its a tie!");
@@ -18,7 +24,7 @@ function playRound(player, computer) {
         return ("You Win!" + " Rock beats Scissors.");
         /*^ if player input matches with "rock" and computer input matches
             with "scissors", this will return the result. 
-            otherwise keep going. from line 24 to line 37, it contains 
+            otherwise keep going. from line 30 to line 43, it contains 
             repetition of the same code with different input comparisons 
             and results. */
     } else if (player === "paper" && computer === "rock") {
@@ -28,7 +34,7 @@ function playRound(player, computer) {
                 /*^ "You Win/Lose!" and "blank beats blank." are 
                     separate strings, because "You Win/Lose!" will later
                     be used to count wins and loses. 
-                    thats the idea at least.*/);
+                    thats the idea at least. */);
     } else if (player === "rock" && computer === "paper") {
         return ("You Lose!" + " Paper beats Rock.");
     } else if (player === "paper" && computer === "scissors") {
@@ -38,7 +44,7 @@ function playRound(player, computer) {
     } else {
         return ("WHAT THE HELL EVEN IS THAT??!!");
         /*^ if player input is something other then "rock", "paper"
-            or "scissors", this will return*/
+            or "scissors", this will return. */
     }
 }
 
