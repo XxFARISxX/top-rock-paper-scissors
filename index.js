@@ -12,7 +12,7 @@ let lose = 0;
 function playRound(player, computer) {
 //^ the two parameters will get player and computer input.
 
-    player = prompt("choice?").toLocaleLowerCase();
+    player = prompt("choice?").toLowerCase();
     /*^ this gets player input through a prompt. 
         also turns the player input to lowercase.*/
 
@@ -60,4 +60,18 @@ function playGame() {
         /*^ this loop runs the playRound function 5 times.
             also console.log the results each time.*/
     }
+
+    if (win > lose) {
+        console.log("!!!You Won the Game!!!");
+    } else if (lose > win) {
+        console.log("!!!You Lost the Game!!!");
+    } else if (win === lose) {
+        console.log("!!!Its a Tie!!!");
+    } /*^ this counts the total win/lose results of 5 playRound runs,
+          and compares them to get the final results.*/
+
+    win = 0;
+    lose = 0;
+    /*^ this resets the win/lose counter after the final results. */
+
 }
