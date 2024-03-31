@@ -4,6 +4,11 @@ function getComputerChoice() {
     return randomChoice;
 }
 
+let win = 0;
+let lose = 0;
+/*^ these two variables will count wins/loses take from playRound function,
+    to be compared inside playGame function.*/
+
 function playRound(player, computer) {
 //^ the two parameters will get player and computer input.
 
@@ -20,22 +25,28 @@ function playRound(player, computer) {
     /*^ if both player and computer inputs are the same, this
       will return the result as a tie.*/
     } else if (player === "rock" && computer === "scissors") {
+        win++; /*this adds 1 to the win variable.*/
       //^ compares player and computer input with "rock" and "scissors".
         return ("You Win! Rock beats Scissors.");
         /*^ if player input matches with "rock" and computer input matches
             with "scissors", this will return the result. 
-            otherwise keep going. from line 30 to line 39, it contains 
+            otherwise keep going. from line 36 to line 50, it contains 
             repetition of the same code with different input comparisons 
             and results.*/
     } else if (player === "paper" && computer === "rock") {
+        win++;
         return ("You Win! Paper beats Rock.");
     } else if (player === "scissors" && computer === "paper") {
+        win++;
         return ("You Win! Scissors beat Paper");
     } else if (player === "rock" && computer === "paper") {
+        lose++; /*this adds 1 to the lose variable.*/
         return ("You lose! Paper beats Rock.");
     } else if (player === "paper" && computer === "scissors") {
+        lose++;
         return ("You lose! Scissors beats paper.");
     } else if (player === "scissors" && computer === "rock") {
+        lose++;
         return ("You lose! Rock beats Scissors.");
     } else {
         return ("WHAT THE HELL EVEN IS THAT??!!");
