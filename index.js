@@ -4,10 +4,6 @@ function getComputerChoice() {
     return randomChoice;
 }
 
-const results = ["its a tie!", "You Win!", "You Lose!", "WHAT THE HELL EVEN IS THAT??!!"];
-/*^ this array stores the result strings that will return after playRound
-    function is executed.*/
-
 function playRound(player, computer) {
 //^ the two parameters will get player and computer input.
 
@@ -20,38 +16,37 @@ function playRound(player, computer) {
         function.*/
 
     if (player === computer) {
-        return (results[0]/*this returns tie string from results array.*/);
+        return ("its a tie!");
     /*^ if both player and computer inputs are the same, this
       will return the result as a tie.*/
     } else if (player === "rock" && computer === "scissors") {
       //^ compares player and computer input with "rock" and "scissors".
-        return (results[1]/*this returns win string from results array.*/ + " Rock beats Scissors.");
+        return ("You Win! Rock beats Scissors.");
         /*^ if player input matches with "rock" and computer input matches
             with "scissors", this will return the result. 
-            otherwise keep going. from line 34 to line 47, it contains 
+            otherwise keep going. from line 30 to line 39, it contains 
             repetition of the same code with different input comparisons 
             and results.*/
     } else if (player === "paper" && computer === "rock") {
-        return (results[1] + " Paper beats Rock.");
+        return ("You Win! Paper beats Rock.");
     } else if (player === "scissors" && computer === "paper") {
-        return (results[1] + " Scissors beat Paper"
-                /*^ "You Win/Lose!" and "blank beats blank." are 
-                    separate strings, because "You Win/Lose!" will later
-                    be used to count wins and loses. 
-                    thats the idea at least.*/);
+        return ("You Win! Scissors beat Paper");
     } else if (player === "rock" && computer === "paper") {
-        return (results[2]/*this returns lose string from results array.*/ + " Paper beats Rock.");
+        return ("You lose! Paper beats Rock.");
     } else if (player === "paper" && computer === "scissors") {
-        return (results[2] + " Scissors beats paper.");
+        return ("You lose! Scissors beats paper.");
     } else if (player === "scissors" && computer === "rock") {
-        return (results[2] + " Rock beats Scissors.");
+        return ("You lose! Rock beats Scissors.");
     } else {
-        return (results[3]/*this returns the string from results array when player input is invalid.*/);
+        return ("WHAT THE HELL EVEN IS THAT??!!");
+               /*^ this returns if the player input is invalid.*/
     }
 }
 
 function playGame() {
     for (let i = 0; i < 5; i++) {
         console.log(playRound());
+        /*^ this loop runs the playRound function 5 times.
+            also console.log the results each time.*/
     }
 }
