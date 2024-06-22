@@ -50,16 +50,19 @@ function playRound(player, computer) {
     }
 }
 
+const roundResults = document.querySelector("#roundResults");
+
 const rock = document.querySelector("#rock").addEventListener("click", () => {
-    console.log(playRound("rock"))
+    roundResults.textContent = playRound("rock");
 });
 const paper = document.querySelector("#paper").addEventListener("click", () => {
-    console.log(playRound("paper"))
+    roundResults.textContent = playRound("paper");
 });
 const scissors = document.querySelector("#scissors").addEventListener("click", () => {
-    console.log(playRound("scissors"));
-    //^these buttons will play a round with the choice thats assigned to them.
+    roundResults.textContent = playRound("scissors");
 });
+    /*^these buttons will play a round with the choice thats assigned to them.
+       then display the results inside the roundResults div*/
 
 /*
 function playGame() {
