@@ -12,10 +12,6 @@ let lose = 0;
 function playRound(player, computer) {
 //^ the two parameters will get player and computer input.
 
-    player = prompt("choice?").toLowerCase();
-    /*^ this gets player input through a prompt. 
-        also turns the player input to lowercase.*/
-
     computer = getComputerChoice();
     /*^ this gets computer input through the getComputerChoice()
         function.*/
@@ -54,11 +50,23 @@ function playRound(player, computer) {
     }
 }
 
+const rock = document.querySelector("#rock").addEventListener("click", () => {
+    console.log(playRound("rock"))
+});
+const paper = document.querySelector("#paper").addEventListener("click", () => {
+    console.log(playRound("paper"))
+});
+const scissors = document.querySelector("#scissors").addEventListener("click", () => {
+    console.log(playRound("scissors"));
+    //^these buttons will play a round with the choice thats assigned to them.
+});
+
+/*
 function playGame() {
     for (let i = 0; i < 5; i++) {
         console.log(playRound());
         /*^ this loop runs the playRound function 5 times.
-            also console.log the results each time.*/
+            also console.log the results each time.*
     }
 
     if (win > lose) {
@@ -68,10 +76,10 @@ function playGame() {
     } else if (win === lose) {
         console.log("!!!Its a Tie!!!");
     } /*^ this counts the total win/lose results of 5 playRound runs,
-          and compares them to get the final results.*/
+          and compares them to get the final results.*
 
     win = 0;
     lose = 0;
-    /*^ this resets the win/lose counter after the final results. */
+    /*^ this resets the win/lose counter after the final results. *
 
-}
+}*/
