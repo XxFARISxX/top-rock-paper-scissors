@@ -35,7 +35,7 @@ function playRound(player, computer) {
         return ("You Win! Rock beats Scissors.");
         /*^ if player input matches with "rock" and computer input matches
             with "scissors", this will return the result. 
-            otherwise keep going. from line 36 to line 50, it contains 
+            otherwise keep going. from line 41 to line 61, it contains 
             repetition of the same code with different input comparisons 
             and results.*/
     } else if (player === "paper" && computer === "rock") {
@@ -97,26 +97,3 @@ const scissors = document.querySelector("#scissors").addEventListener("click", (
 });
     /*^these buttons will play a round with the choice thats assigned to them.
        then display the results inside the roundResults div*/
-
-/*
-function playGame() {
-    for (let i = 0; i < 5; i++) {
-        console.log(playRound());
-        /*^ this loop runs the playRound function 5 times.
-            also console.log the results each time.*
-    }
-    const score = document.querySelector("#score").textContent = `Player: ${win}\nComputer: ${lose}`;
-    if (win > lose) {
-        console.log("!!!You Won the Game!!!");
-    } else if (lose > win) {
-        console.log("!!!You Lost the Game!!!");
-    } else if (win === lose) {
-        console.log("!!!Its a Tie!!!");
-    } /*^ this counts the total win, lose, and tie results of 5 playRound runs,
-          and compares them to get the final results.*
-
-    win = 0;
-    lose = 0;
-    /*^ this resets the win/lose counter after the final results. *
-
-}*/
